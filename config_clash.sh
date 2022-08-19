@@ -42,7 +42,7 @@ echo "set Auto_start success!!"
 
 echo "
 if [ -f $(pwd)/clash.bashrc ]; then
-    $(pwd)/clash.bashrc 
+    source $(pwd)/clash.bashrc 
 fi
 ">> ~/.bashrc
 
