@@ -1,0 +1,8 @@
+echo "clash_ctl_on -> start clash by systemd"
+echo "clash_ctl_off -> stop clash by systemd"
+echo "clash_ctl_status -> show clash status"
+echo "clash_on -> start proxy in Gnome Desktop"
+echo "clash_off -> close proxy in Gnome Desktop"
+echo "clash_shell_on -> start proxy in Terminal"
+echo "clash_shell_off -> close proxy in Terminal"
+echo "clash_manage -> open manege panel http->//clash.razord.top/"
