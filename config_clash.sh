@@ -13,12 +13,12 @@ wget $(cat ./clash_link.txt) -O clash/configs/config.yaml
 echo download success!
 
 
-
 clash_exec="$(pwd)/clash/clash"
 clash_config="$(pwd)/clash/configs"
 echo $clash_exec
 echo $clash_config
-rm clash.service
+echo remove old clash.service
+rm clash.service >> /dev/null
 echo -e "[unit]\n\
 Description=clash\n\
 After=multi-user.targe\n\
@@ -31,6 +31,7 @@ RestartSec=10s
 [Install]
 WantedBy=multi-user.target
 ' >> clash.service
+
 
 sudo mv clash.service /etc/systemd/system/clash.service
 sudo systemctl daemon-reload
