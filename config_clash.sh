@@ -3,10 +3,10 @@ rm -rf clash
 mkdir -p clash
 mkdir -p clash/configs
 cd clash
-wget https://github.com/Dreamacro/clash/releases/download/v1.11.4/clash-linux-amd64-v3-v1.11.4.gz -O clash.gz
+wget https://gitee.com/wangdaochuan/auto-clash-cli/releases/download/dependenciesv0.1/clash-linux-amd64-v3-v1.11.4.gz -O clash.gz
 gunzip clash.gz
 chmod +x clash
-wget https://github.com/Dreamacro/maxmind-geoip/releases/latest/download/Country.mmdb -O configs/Country.mmdb 
+wget https://gitee.com/wangdaochuan/auto-clash-cli/releases/download/dependenciesv0.1/Country.mmdb -O configs/Country.mmdb 
 cd ..
 wget $(cat ./clash_link.txt) -O clash/configs/config.yaml
 
