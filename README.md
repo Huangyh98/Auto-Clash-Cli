@@ -1,5 +1,5 @@
 # Auto-clash-cli
-这是一个帮你自动配置clash的脚本，只适用于 x86 电脑
+这是一个帮你自动配置clash的脚本，只适用于 ubuntu x86_64
 # 使用指南
 1. ```
     git clone https://gitee.com/wangdaochuan/auto-clash-cli.git
