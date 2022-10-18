@@ -1,5 +1,6 @@
 echo "clash_ctl_on -> start clash by systemd"
 echo "clash_ctl_off -> stop clash by systemd"
+echo "clash_ctl_restart -> restart clash by systemd"
 echo "clash_ctl_status -> show clash status"
 echo "clash_on -> start proxy in Gnome Desktop"
 echo "clash_off -> close proxy in Gnome Desktop"
