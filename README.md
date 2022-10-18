@@ -1,5 +1,5 @@
 # Auto-clash-cli
-这是一个帮你自动配置 无界面 clash的 脚本
+这是一个帮你自动配置 无界面 clash的 脚本, 支持ubuntu 系统
 
 支持架构 
 - AMD64
