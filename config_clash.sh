@@ -13,6 +13,7 @@ if [ -z $url ];then
     echo "请先创建clash_link.txt,并将 链接放入txt中"
     exit
 fi
+# 使用须知
 sed -n '1, 5p' ./PROMPT.txt
 read -n 1 -s -r -p "Press any key to continue..." key
 
@@ -84,6 +85,7 @@ fi
 
 echo -e "alias clash_help='bash $(pwd)/clash_help.sh'">> ~/.bashrc
 
-echo "clash 配置完成，以下是可以使用的命令，请在新终端中使用"
+echo "clash 配置完成，，请在新终端中使用"
+sed -n '7, 8p' ./PROMPT.txt
 
 bash ./clash_help.sh
