@@ -13,6 +13,10 @@ if [ -z $url ];then
     echo "请先创建clash_link.txt,并将 链接放入txt中"
     exit
 fi
+sed -n '1, 5p' ./PROMPT.txt
+read -n 1 -s -r -p "Press any key to continue..." key
+
+
 echo "快结束前需要输出密码。systemctl 需要"
 sleep 2
 arch=$1

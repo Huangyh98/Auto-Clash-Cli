@@ -16,6 +16,13 @@
 3. 运行 **./config_clash.sh** ,脚本会自动帮你完成配置,中途需要你输入一次密码使得能够使用systemd控制clash 运行
 4. 打开一个新的terminal，使用 "clash_help" 查看帮助
 
+# 使用示例
+1. 在 使用apt 命令时 临时使用代理 下载 软件
+    ```bash
+    sudo apt install $apt_proxy sublime-text
+    ```
+
+
 # 更新订阅的配置文件
 1. 修改clash_link.txt 为新的 订阅链接
 2. ./update_clash_url.sh
