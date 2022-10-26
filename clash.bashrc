@@ -1,5 +1,6 @@
 alias clash_ctl_on='sudo systemctl start clash'
 alias clash_ctl_off='sudo systemctl stop clash'
+alias clash_ctl_restart='sudo systemctl restart clash'
 alias clash_ctl_status='systemctl status clash'
 alias clash_on='
 gsettings set org.gnome.system.proxy.http host 127.0.0.1
