@@ -1,0 +1,5 @@
+Hello, welcome to Auto—Clash-CLI.
+The function of this script is to automatically configure clash in the current directory and create a systemd service.
+Make sure you have the correct link in "clash_link.txt" before you start
+Currently, each run deletes previous programs and data
+Are you sure you want to start (press Ctrl+c to exit)

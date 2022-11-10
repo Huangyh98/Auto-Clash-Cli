@@ -15,6 +15,8 @@ if [ -z $url ];then
 fi
 # 使用须知
 sed -n '1, 5p' ./PROMPT.txt
+# sed -n '1, 5p' ./PROMPT_en.txt
+
 read -n 1 -s -r -p "Press any key to continue..." key
 
 
