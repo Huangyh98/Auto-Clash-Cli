@@ -2,12 +2,13 @@ alias clash_ctl_on='sudo systemctl start clash'
 alias clash_ctl_off='sudo systemctl stop clash'
 alias clash_ctl_restart='sudo systemctl restart clash'
 alias clash_ctl_status='systemctl status clash'
+# Anaconda /bin 也有叫做 gsettings 的程序
 alias clash_on='
-gsettings set org.gnome.system.proxy.http host 127.0.0.1
-gsettings set org.gnome.system.proxy.http port 7890
-gsettings set org.gnome.system.proxy.https host 127.0.0.1
-gsettings set org.gnome.system.proxy.https port 7890
-gsettings set org.gnome.system.proxy mode manual
+/usr/bin/gsettings set org.gnome.system.proxy.http host 127.0.0.1
+/usr/bin/gsettings set org.gnome.system.proxy.http port 7890
+/usr/bin/gsettings set org.gnome.system.proxy.https host 127.0.0.1
+/usr/bin/gsettings set org.gnome.system.proxy.https port 7890
+/usr/bin/gsettings set org.gnome.system.proxy mode manual
 echo "start proxy in Gnome Desktop"
 '
 
