@@ -17,7 +17,13 @@
 
 2. 将 订阅链接 复制到 **clash_link.txt** 中,注意是Clash用的订阅链接，如果你用过windows 下的 Clash 就应该知道。
 
-3. 运行 **./config_clash.sh** ,脚本会自动帮你完成配置,中途需要你输入一次密码使得能够使用systemd控制clash 运行
+3. 运行 **./config_clash.sh <架构>** ,脚本会自动帮你完成配置,中途需要你输入一次密码使得能够使用systemd控制clash 运行。如
+   
+   ```
+   ./config_clash.sh AMD64
+   ```
+   
+   
 
 4. 打开一个新的terminal，使用 "clash_help" 查看帮助
 
@@ -70,5 +76,3 @@ systemctl restart docker
 # 备注
 
 总觉得 没界面的版本稳定些，所以搞了这个，需要的依赖提前放到国内了，以防github下不下来
-
-
