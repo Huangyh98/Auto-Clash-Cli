@@ -19,6 +19,7 @@ echo "close proxy in Gnome Desktop"
 alias clash_shell_on='export http_proxy=http://127.0.0.1:7890;export https_proxy=http://127.0.0.1:7890
 echo "start proxy in Terminal"
 '
+clash_shell_on
 alias clash_shell_off='unset http_proxy;unset https_proxy
 echo "close proxy in Terminal"
 '
