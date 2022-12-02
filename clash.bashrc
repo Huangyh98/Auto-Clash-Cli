@@ -3,6 +3,7 @@ alias clash_ctl_off='sudo systemctl stop clash'
 alias clash_ctl_restart='sudo systemctl restart clash'
 alias clash_ctl_status='systemctl status clash'
 # Anaconda /bin 也有叫做 gsettings 的程序
+# 以下设置也适用于 unity 桌面
 alias clash_on='
 /usr/bin/gsettings set org.gnome.system.proxy.http host 127.0.0.1
 /usr/bin/gsettings set org.gnome.system.proxy.http port 7890
