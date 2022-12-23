@@ -26,3 +26,5 @@ echo "close proxy in Terminal"
 alias clash_manage='firefox http://clash.razord.top'
 
 export apt_proxy='-o Acquire::http::proxy=http:127.0.0.1:7890'
+
+alias clash_ok='source ~/auto-clash-cli/test_proxy_status.sh '

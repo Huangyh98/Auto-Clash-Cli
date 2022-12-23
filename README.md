@@ -73,6 +73,8 @@ Environment="HTTPS_PROXY=http://127.0.0.1:7890/"
 systemctl daemon-reload
 systemctl restart docker
 ```
+# Command
+- clash_ok 测试连接是否正常
 
 # 备注
 
