@@ -6,6 +6,7 @@
 
 - AMD64
 - ARMv8
+- ARMv7a
 
 # 使用指南
 

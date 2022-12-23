@@ -4,7 +4,7 @@ colors_Normal='\e[0m'
 argNums=$#
 if [ $argNums -eq 0 ]
 then
-    echo "没有发现 架构 ，支持 AMD64 ARMv8"
+    echo "没有发现 架构 ，支持 AMD64 ARMv8 ARMv7a"
     echo "使用示例:./config_clash.sh AMD64"
     exit
 fi
@@ -32,6 +32,11 @@ if [ $arch = ARMv8 ]
 then
 echo "下载 Clash armv8"
 wget https://gitee.com/wangdaochuan/auto-clash-cli/releases/download/dependenciesv0.1/clash-linux-armv8-v1.11.8.gz -O clash.gz
+elif [ $arch = ARMv7a ]
+then
+echo "下载 Clash ARMv7a"
+wget https://gitee.com/wangdaochuan/auto-clash-cli/releases/download/dependenciesv0.1/clash-linux-armv7-v1.12.0.gz -O clash.gz
+
 elif [ $arch = AMD64 ]
 then
 echo "下载 Clash amd64"
