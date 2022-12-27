@@ -18,14 +18,16 @@ if [ -z $url ];then
     echo "请先创建clash_link.txt,并将 链接放入txt中"
     exit
 fi
+user_name=$(echo $(pwd)| awk '{split($0,a,"/"); print a[3]}')
 # 使用须知
+echo "hello $user_name"
 sed -n '1, 5p' ./PROMPT.txt
 # sed -n '1, 5p' ./PROMPT_en.txt
 
 read -n 1 -s -r -p "Press any key to continue..." key
 
 
-echo "快结束前需要输出密码。systemctl 需要"
+#echo "快结束前需要输出密码。systemctl 需要"
 sleep 2
 arch=$1
 echo "删除之前的 clash"
@@ -81,7 +83,7 @@ WantedBy=multi-user.target
 ' >> clash.service
 
 
-echo -e "$colors_On_Red 注意这里需要密码 $colors_Normal"
+# echo -e "$colors_On_Red 注意这里需要密码 $colors_Normal"
 sudo mv clash.service /etc/systemd/system/clash.service
 sudo systemctl daemon-reload
 sudo systemctl start clash
@@ -91,23 +93,24 @@ sudo systemctl enable clash
 echo "set Auto_start success!!"
 # TODO,remove clash in bashrc
 echo "find old clash in bashrc"
-start_line=$(cat ~/.bashrc|grep clash_env_set_start -n|head -n 1|cut -d: -f1)
-end_line=$(cat ~/.bashrc|grep clash_env_set_end -n|head -n 1|cut -d: -f1)
-
+start_line=$(cat /home/${user_name}/.bashrc|grep clash_env_set_start -n|head -n 1|cut -d: -f1)
+end_line=$(cat /home/${user_name}/.bashrc|grep clash_env_set_end -n|head -n 1|cut -d: -f1)
+# echo "delete ${start_line}~${end_line}"
+sed -i "${start_line},${end_line}d" /home/${user_name}/.bashrc
 echo "
 # clash_env_set_start
 export CLASH_PWD=$(pwd)
-">> ~/.bashrc
+">> /home/${user_name}/.bashrc
 echo "
 if [ -f $(pwd)/clash.bashrc ]; then
     source $(pwd)/clash.bashrc 
 fi
-">> ~/.bashrc
+">> /home/${user_name}/.bashrc
 
-echo -e "alias clash_help='bash $(pwd)/clash_help.sh'">> ~/.bashrc
+echo -e "alias clash_help='bash $(pwd)/clash_help.sh'">> /home/${user_name}/.bashrc
 echo "
 # clash_env_set_end
-">> ~/.bashrc
+">> /home/${user_name}/.bashrc
 echo "clash 配置完成，，请在新终端中使用"
 sed -n '7, 8p' ./PROMPT.txt
 
