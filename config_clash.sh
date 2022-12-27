@@ -2,6 +2,11 @@
 colors_On_Red='\033[41m' 
 colors_Normal='\e[0m' 
 argNums=$#
+
+if (( $EUID != 0 )); then
+    echo "Please run as root"
+    exit
+fi
 if [ $argNums -eq 0 ]
 then
     echo "没有发现 架构 ，支持 AMD64 ARMv8 ARMv7a"
@@ -60,6 +65,7 @@ clash_config="$(pwd)/clash/configs"
 echo $clash_exec
 echo $clash_config
 echo remove old clash.service
+# TODO:remove /etc/systemd/system/clash.service
 rm clash.service >> /dev/null
 echo -e "[unit]\n\
 Description=clash\n\
@@ -83,7 +89,15 @@ sudo systemctl enable clash
 
 
 echo "set Auto_start success!!"
+# TODO,remove clash in bashrc
+echo "find old clash in bashrc"
+start_line=$(cat ~/.bashrc|grep clash_env_set_start -n|head -n 1|cut -d: -f1)
+end_line=$(cat ~/.bashrc|grep clash_env_set_end -n|head -n 1|cut -d: -f1)
 
+echo "
+# clash_env_set_start
+export CLASH_PWD=$(pwd)
+">> ~/.bashrc
 echo "
 if [ -f $(pwd)/clash.bashrc ]; then
     source $(pwd)/clash.bashrc 
@@ -91,7 +105,9 @@ fi
 ">> ~/.bashrc
 
 echo -e "alias clash_help='bash $(pwd)/clash_help.sh'">> ~/.bashrc
-
+echo "
+# clash_env_set_end
+">> ~/.bashrc
 echo "clash 配置完成，，请在新终端中使用"
 sed -n '7, 8p' ./PROMPT.txt
 
