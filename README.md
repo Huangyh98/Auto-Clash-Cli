@@ -79,3 +79,6 @@ systemctl restart docker
 # 备注
 
 总觉得 没界面的版本稳定些，所以搞了这个，需要的依赖提前放到国内了，以防github下不下来
+
+# 参考资料
+[apt_proxy](https://blog.csdn.net/lonelysky/article/details/81059339)
