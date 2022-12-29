@@ -26,7 +26,7 @@ sed -n '1, 5p' ./PROMPT.txt
 
 read -n 1 -s -r -p "Press any key to continue..." key
 
-
+sudo apt install curl vim
 #echo "快结束前需要输出密码。systemctl 需要"
 sleep 2
 arch=$1
